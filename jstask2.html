@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Letters in String</title>
+    <script>
+        function sortStringAlphabetically(str) {
+            // Convert the string to an array, sort the array, and join it back into a string
+            let sortedStr = str.split('').sort().join('');
+            return sortedStr;
+        }
+
+        function displaySortedString() {
+            // Get the input value
+            let inputString = document.getElementById('stringInput').value;
+            // Sort the string alphabetically
+            let result = sortStringAlphabetically(inputString);
+            // Display the result
+            document.getElementById('result').innerText = `Sorted String: ${result}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Sort Letters in String</h1>
+    <input type="text" id="stringInput" placeholder="Enter a string">
+    <button onclick="displaySortedString()">Sort</button>
+    <p id="result"></p>
+</body>
+</html>

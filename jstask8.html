@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="jstask8cs.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Registration form</h2>
+        <form id="registrationForm">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName">
+                <div class="form-text text-danger d-none" id="firstNameError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName">
+                <div class="form-text text-danger d-none" id="lastNameError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+                <div class="form-text text-danger d-none" id="emailError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password">
+                <div class="form-text text-danger d-none" id="passwordError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Re-enter Password</label>
+                <input type="password" class="form-control" id="confirmPassword">
+                <div class="form-text text-danger d-none" id="confirmPasswordError">POOR OR MISMATCH</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gender</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age">
+                <div class="form-text text-danger d-none" id="ageError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phoneNumber">
+                <div class="form-text text-danger d-none" id="phoneNumberError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address">
+                <div class="form-text text-danger d-none" id="addressError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control" id="state">
+                <div class="form-text text-danger d-none" id="stateError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select" id="country">
+                    <option value="">Choose your country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                </select>
+                <div class="form-text text-danger d-none" id="countryError">POOR</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Languages known</label><br>
+                <input type="checkbox" id="english" name="languages" value="English">
+                <label for="english">English</label>
+                <input type="checkbox" id="kannada" name="languages" value="Kannada">
+                <label for="kannada">Kannada</label>
+                <input type="checkbox" id="hindi" name="languages" value="Hindi">
+                <label for="hindi">Hindi</label>
+                <input type="checkbox" id="telugu" name="languages" value="Telugu">
+                <label for="telugu">Telugu</label>
+            </div>
+            <div class="mb-3">
+                <input type="checkbox" id="declaration" name="declaration">
+                <label for="declaration">Hereby I declare all the given details are true</label>
+            </div>
+            <div class="mb-3">
+                <a href="#">Log in to Eduma website</a>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-danger">REGISTER</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybU5rRwLRTKWI0TG6Au65TLOF26pF8aDY1co4kltD/hD6l1i6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-pEKdQa4k0K0s2JptluSLH3N1KUvQojwS3FOe1oI/9PqD4eaOpL2s60UlTPhBfok6" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

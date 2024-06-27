@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+            margin-left: 10px;
+        }
+        input.error, textarea.error {
+            border: 2px solid red;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: inline-block;
+            width: 100px;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Get form fields
+            let name = document.getElementById('name');
+            let email = document.getElementById('email');
+            let website = document.getElementById('website');
+            let message = document.getElementById('message');
+
+            // Clear previous error messages
+            clearErrors();
+
+            // Validate Name
+            if (name.value.trim() === '') {
+                displayError(name, 'This field is required');
+                isValid = false;
+            }
+
+            // Validate Email
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value.trim() === '') {
+                displayError(email, 'A valid email address is required');
+                isValid = false;
+            } else if (!emailPattern.test(email.value.trim())) {
+                displayError(email, 'A valid email address is required');
+                isValid = false;
+            }
+
+            // Validate Website
+            let urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+            if (website.value.trim() === '') {
+                displayError(website, 'A valid URL is required');
+                isValid = false;
+            } else if (!urlPattern.test(website.value.trim())) {
+                displayError(website, 'A valid URL is required');
+                isValid = false;
+            }
+
+            // Validate Message
+            if (message.value.trim() === '') {
+                displayError(message, 'This field is required');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function displayError(element, message) {
+            element.classList.add('error');
+            let errorMessage = document.createElement('span');
+            errorMessage.className = 'error';
+            errorMessage.innerText = message;
+            element.parentElement.appendChild(errorMessage);
+        }
+
+        function clearErrors() {
+            let errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(element => element.classList.remove('error'));
+
+            let errorMessages = document.querySelectorAll('span.error');
+            errorMessages.forEach(message => message.remove());
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="website">Website:</label>
+            <input type="text" id="website" name="website">
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
